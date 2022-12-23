@@ -28,6 +28,17 @@ class Book {
 
     return newBook;
   }
+
+  static async delete(bookId) {
+    const foundBook = await Book.findOne(userId);
+
+    if (foundBook) {
+      this.bookDB = this.bookDB.filter((book) => book.id !== Number(bookId));
+      return foundBook;
+    }
+
+      throw new Error('Book not found');
+  }
 }
 
 module.exports = Book;

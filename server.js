@@ -9,7 +9,8 @@ const PORT = 5000;
 const bodyParser = express.json();
 
 app.get('/books', BookController.getBook);
-app.post('/books', bodyParser, BookController.createBook);;
+app.post('/books', bodyParser, BookController.createBook);
+app.delete('/books/:bookId', BookController.deleteBook);
 
 
 app.listen(PORT);

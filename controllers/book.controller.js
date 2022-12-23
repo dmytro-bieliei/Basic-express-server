@@ -9,3 +9,8 @@ module.exports.createBook = async (req, res) => {
   const newBook = await Book.create(req.body);
   res.send(newBook);
 };
+
+module.exports.deleteBook = async (req, res) =>{
+  
+  res.send(book)
+}
