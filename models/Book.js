@@ -18,6 +18,11 @@ class Book {
     return this.bookDB;
   }
 
+  static async findOne(bookId) {
+    const foundBook = this.bookDB.find((book) => book.id === Number(bookId));
+    return foundBook;
+  }
+
   static async create(bookData) {
     const newBook = {
       ...bookData,
