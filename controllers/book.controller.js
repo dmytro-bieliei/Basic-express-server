@@ -1,4 +1,6 @@
+const Book = require("../models/Book");
+
 module.exports.getBook = async (req, res) => {
-const books = await Books.findAll();
-res.send(books);
-};
+  const books = await Book.findAll();
+  res.send(books);
+}; 

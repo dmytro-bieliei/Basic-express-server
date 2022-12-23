@@ -13,6 +13,10 @@ class Book {
       publicationDate: 'february 11, 2022',
     },
   ];
+
+  static async findAll() {
+    return this.bookDB;
+  }
 }
 
 module.exports = Book;
