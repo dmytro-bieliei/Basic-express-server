@@ -17,6 +17,17 @@ class Book {
   static async findAll() {
     return this.bookDB;
   }
+
+  static async create(bookData) {
+    const newBook = {
+      ...bookData,
+      id: Date.now(),
+    };
+
+    this.bookDB.push(newBook);
+
+    return newBook;
+  }
 }
 
 module.exports = Book;

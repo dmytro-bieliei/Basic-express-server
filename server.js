@@ -9,5 +9,7 @@ const PORT = 5000;
 const bodyParser = express.json();
 
 app.get('/books', BookController.getBook);
+app.post('/books', bodyParser, BookController.createBook);;
+
 
 app.listen(PORT);
