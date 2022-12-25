@@ -44,6 +44,28 @@ class Book {
 
       throw new Error('Book not found');
   }
+
+  static async update (userId, newData) {
+    const foundBook = await Book.findOne(bookId);
+
+    if (foundBook) {
+      let updateBook;
+      this.bookDb =this.bookDB.map((book) =>{
+        const isSameBook = book.id === Number(bookId);
+
+        if(!isSameBook) {
+          return book;
+        } else {
+          updateBook = {
+            ...book,
+            ...newData,
+          };
+          return updateBook;
+        }
+      });
+      return updateBook;
+    }
+  }
 }
 
 module.exports = Book;

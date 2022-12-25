@@ -12,6 +12,7 @@ app.get('/books', BookController.getBooks);
 app.get('books/:bookId', bodyParser, BookController.getBook)
 app.post('/books', bodyParser, BookController.createBook);
 app.delete('/books/:bookId', BookController.deleteBook);
+app.put('books/:bookId', bodyParser, BookController.updateBook);
 
 
 app.listen(PORT);
