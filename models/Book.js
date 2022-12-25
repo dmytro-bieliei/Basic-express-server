@@ -45,7 +45,7 @@ class Book {
       throw new Error('Book not found');
   }
 
-  static async update (userId, newData) {
+  static async update (bookId, newData) {
     const foundBook = await Book.findOne(bookId);
 
     if (foundBook) {

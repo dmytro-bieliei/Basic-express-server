@@ -10,7 +10,7 @@ module.exports.getBook = async (req, res) => {
     params: { bookId },
   } = req;
 
-  const foundUser = await Book.findOne(userId);
+  const foundUser = await Book.findOne(bookId);
   res.send(foundUser);
 };
 
@@ -20,8 +20,15 @@ module.exports.createBook = async (req, res) => {
 };
 
 module.exports.deleteBook = async (req, res) => {
-  const deletedBook = await Book.delete(bookId);
-  res.send(deletedBook);
+  const {
+    params: { bookId },
+  } = req;
+  try {
+    const deletedBook = await Book.delete(bookId);
+    res.send(deletedBook);
+  } catch (error) {
+    res.status(404).send(error.message);
+  }
 };
 
 module.exports.updateBook = async (req, res) => {
@@ -31,8 +38,8 @@ module.exports.updateBook = async (req, res) => {
   } = req;
 
   try {
-  const updateBook = await Book.update(userId, body);
-  res.send(updateBook);
+    const updateBook = await Book.update(bookId, body);
+    res.send(updateBook);
   } catch (error) {
     res.status(404).send(error.message);
   }

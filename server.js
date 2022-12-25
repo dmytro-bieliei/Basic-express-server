@@ -1,7 +1,11 @@
 const express = require('express');
 
+const {
+  validateBookMW,
+  validateBookUpdateMW,
+} = require('./middlewares/bookMW');
+
 const BookController = require('./controllers/book.controller');
-const { validateBookMW } = require('./middlewares/bookMW');
 
 const app = express();
 
