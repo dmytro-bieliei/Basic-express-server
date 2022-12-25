@@ -65,6 +65,7 @@ class Book {
       });
       return updateBook;
     }
+    throw new Error('Book not found');
   }
 }
 

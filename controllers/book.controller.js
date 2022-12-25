@@ -29,6 +29,11 @@ module.exports.updateBook = async (req, res) => {
     params: { bookId },
     body,
   } = req;
+
+  try {
   const updateBook = await Book.update(userId, body);
   res.send(updateBook);
+  } catch (error) {
+    res.status(404).send(error.message);
+  }
 };
