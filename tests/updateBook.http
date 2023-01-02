@@ -2,7 +2,7 @@ PUT http://localhost:5000/books/1
 Content-Type: application/json
 
 {
-  "id": 1,
+  "id": 2,
   "title": "Head First JavaScript programming",
   "authors":"Elisabeth Robson, Eric Freeman",
   "publicationDate": "may 6, 2014",
